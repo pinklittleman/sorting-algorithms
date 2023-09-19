@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(22, 22, 22);
+    overflow: hidden;
+    margin: 0;
+}
+
+#shuffle{
+    position: relative;
+    top: -100px;
+    right: -100px;
+}
+
+#start{
+    position: relative;
+    top: -100px;
+    right: -100px;
+}
