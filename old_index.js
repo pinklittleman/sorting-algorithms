@@ -57,9 +57,37 @@ Bars.forEach(bar => {
 function mainloop(){
     
     ctx.clearRect(0,0,canvas.width,canvas.height)
+
+    for (let i = 0; i < BarXStored.length; i++) {
+        
+    }
      
     Bars.forEach(bar => {
         bar.draw()
+
+        if(bar.R > 255){
+            bar.R = 0
+        }
+        bar.R+=randnum(5)
+
+        if(bar.G > 255){
+            bar.G = 0
+        }
+        bar.G+=randnum(3)
+
+        if(bar.B > 255){
+            bar.B = 0
+        }
+        bar.B+=randnum(9)
+
+        Bars.forEach(bar2 => {
+            if(bar.id != bar2.id){
+                
+                if(bar.x == bar2.x){
+                    
+                }
+            }
+        });
     });
 
     requestAnimationFrame(mainloop)
@@ -73,9 +101,11 @@ function start(){
 
 function shuffle(){
     Bars.forEach(bar => {
-        bar.R = 0+bar.height
-        // bar.G = 0+bar.height
+        bar.R = randnum(255)
+        bar.G = randnum(255)
+        bar.B = randnum(255)
         bar.randomBarPos = randnum(BarsAmmount)
+        console.log(bar.randomBarPos)
         bar.x = BarXStored[bar.randomBarPos].Xpos
 
     });
