@@ -72,13 +72,7 @@ function start(){
 }
 
 function shuffle(){
-    Bars.forEach(bar => {
-        bar.R = 0+bar.height
-        // bar.G = 0+bar.height
-        bar.randomBarPos = randnum(BarsAmmount)
-        bar.x = BarXStored[bar.randomBarPos].Xpos
-
-    });
+    
 }
 
 function randnum(num){
@@ -88,9 +82,3 @@ function randnum(num){
     }
     return ran
 }
-
-Bars.forEach(bar => {
-    BarXStored[bar.id] = {Xpos:bar.x,Height:bar.height}
-});
-
-BarsAmmount = Bars.length
